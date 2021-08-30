@@ -28,6 +28,6 @@ with st.form("my_form"):
                 })
                 known_entities.append(entity.id)
         df = pd.DataFrame(output)
-        st.table(df)
+        st.dataframe(df)
 
 
