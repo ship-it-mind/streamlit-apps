@@ -20,62 +20,11 @@ with st.form("my_form"):
             output.append({
                 "type": "thing",
                 "name": entity.id,
+                "wikipedia Link": entity.wikipedia_link,
                 "Wikidata Id": entity.wikidata_id,
                 "Freebase Id": entity.freebase_id
             })
         df = pd.DataFrame(output)
         st.table(df)
-
-# output = [
-#     {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 5,
-#     },
-# {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 1,
-#     },
-# {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 15,
-#     },
-# {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 7,
-
-#     },
-# {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 15,
-#     },
-# {
-#         "type": "thing",
-#         "name": "thing",
-#         "description": "thing",
-#         "sameAs_wikipedia": "thing",
-#         "sameAs_dbpedia": "thing",
-#         "q": 15,
-#     }
-# ]
 
 
