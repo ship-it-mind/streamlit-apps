@@ -16,14 +16,17 @@ with st.form("my_form"):
     if submitted:
         response = analyzer.analyze(text_input, is_url)
         output = []
+        known_entities = []
         for entity in response.entities():
-            output.append({
-                "type": "thing",
-                "name": entity.id,
-                "wikipedia Link": entity.wikipedia_link,
-                "Wikidata Id": entity.wikidata_id,
-                "Freebase Id": entity.freebase_id
-            })
+            if entity.id not in known_entities:
+                output.append({
+                    "type": "thing",
+                    "name": entity.id,
+                    "wikipedia Link": entity.wikipedia_link,
+                    "Wikidata Id": entity.wikidata_id,
+                    "Freebase Id": entity.freebase_id
+                })
+                known_entities.append(entity.id)
         df = pd.DataFrame(output)
         st.table(df)
 
